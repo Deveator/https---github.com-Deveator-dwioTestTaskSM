@@ -50,7 +50,7 @@ exports.config = {
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
-        maxInstances: 5,
+        //maxInstances: 5,
         //
         browserName: 'chrome',
         acceptInsecureCerts: true
@@ -90,6 +90,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
+    baseUrl: 'https://startmatter.com/',
     baseUrl: 'http://localhost',
     //
     // Default timeout for all waitFor* commands.
@@ -199,7 +200,7 @@ exports.config = {
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
-     beforeTest: function (test, context) {
+     beforeTest: function (tests, context) {
          browser.maximizeWindow();
      },
     /**

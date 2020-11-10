@@ -55,7 +55,7 @@ class HomePage extends Page{
     }
 
     get  sendRequestButton() {
-        return $('[class="cb-form__submit');
+        return $('[class="cb-form__submit"]');
     }
 
     get  confirmMessage() {
