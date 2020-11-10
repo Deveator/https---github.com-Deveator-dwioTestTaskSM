@@ -41,10 +41,6 @@ describe('startmatter.com contact form validation', () => {
         confirmPromptAndTypeValue(HomePage.countryStringPrompt, resources.countryStringPrompt, HomePage.countryString, resources.country);
     });
 
-    it('Verify prompt for "Contact number" string and type contact number', () => {
-
-        confirmPromptAndTypeValue(HomePage.contactStringPrompt, resources.contactStringPrompt, HomePage.contactString, resources.contact);
-    });
 
     it('Click on "Send request" button', () => {
 
