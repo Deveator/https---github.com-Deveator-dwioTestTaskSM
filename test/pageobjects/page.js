@@ -1,10 +1,10 @@
-/**
-* main page object containing all methods, selectors and functionality
-* that is shared across all page objects
-*/
+export const gName = Math.random().toString(20).substr(2, 8);
+
 export default class Page {
-    
-    open (path) {
-         browser.url(path)
+
+    open(path) {
+        browser.url(path)
+        console.log(gName);
+        console.log("555");
     }
 }

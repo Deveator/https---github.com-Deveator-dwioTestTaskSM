@@ -17,7 +17,8 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/specs/**/contactFormValidation.js'
+        './test/specs/**/contactFormValidation.js',
+        './test/specs/**/new-branch.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -46,7 +47,7 @@ exports.config = {
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
     capabilities: [{
-    
+
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
@@ -91,7 +92,7 @@ exports.config = {
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
     baseUrl: 'https://startmatter.com/',
-    baseUrl: 'http://localhost',
+    // baseUrl: 'http://localhost',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -108,7 +109,7 @@ exports.config = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     services: ['chromedriver'],
-    
+
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks.html
@@ -132,14 +133,15 @@ exports.config = {
     reporters: ['spec'],
 
 
-    
+
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000,
-        require: ['@babel/register']
+        require: ['@babel/register'],
+      //  global: { hret: Math.random().toString(20).substr(2, 10) },
     },
     //
     // =====
@@ -154,8 +156,9 @@ exports.config = {
      * @param {Object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
      */
-    // onPrepare: function (config, capabilities) {
-    // },
+   // onPrepare: function (config, capabilities) {
+        //   global.myVar = Math.random().toString(20).substr(2, 10);
+   // },
     /**
      * Gets executed before a worker process is spawned and can be used to initialise specific service
      * for that worker as well as modify runtime environments in an async fashion.
@@ -166,6 +169,7 @@ exports.config = {
      * @param  {[type]} execArgv list of string arguments passed to the worker process
      */
     // onWorkerStart: function (cid, caps, specs, args, execArgv) {
+    //    global.myVar = Math.random().toString(20).substr(2, 10);
     // },
     /**
      * Gets executed just before initialising the webdriver session and test framework. It allows you
@@ -174,16 +178,21 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    // beforeSession: function (config, capabilities, specs) {
-    // },
+    beforeSession: function (config, capabilities, specs) { 
+          //   global.myVar = Math.random().toString(20).substr(2, 10); 
+           //  var ter =  global.myVar;
+          //   global.news2 = [ter, ter, ter];
+        //  global.myVar = Math.random().toString(20).substr(2, 10);
+    },
     /**
      * Gets executed before test execution begins. At this point you can access to all global
      * variables like `browser`. It is the perfect place to define custom commands.
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    // before: function (capabilities, specs) {
-    // },
+    //  before: function (capabilities, specs) {
+    //      global.myVar = Math.random().toString(20).substr(2, 10);
+    //  },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
@@ -200,15 +209,18 @@ exports.config = {
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
-     beforeTest: function (tests, context) {
-         browser.maximizeWindow();
-     },
+    beforeTest: function (tests, context) {
+        browser.maximizeWindow();
+
+    },
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
      */
-    // beforeHook: function (test, context) {
-    // },
+    //beforeHook: function (test, context) {
+
+
+    //},
     /**
      * Hook that gets executed _after_ a hook within the suite starts (e.g. runs after calling
      * afterEach in Mocha)

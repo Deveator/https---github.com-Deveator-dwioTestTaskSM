@@ -1,6 +1,9 @@
+//var klop= Math.random().toString(20).substr(2, 10),
+
 export default {
 
-    homeTitle:'Full-cycle Software Development Company | Start Matter',
+
+    homeTitle: 'Full-cycle Software Development Company | Start Matter',
     contactUsButtonName: 'CONTACT US',
     info1: 'web page did not scroll to contact form options',
     info2: 'web page did not scroll to "Send request" button',
@@ -13,6 +16,12 @@ export default {
     country: 'Butlerland',
     contactStringPrompt: 'Contact number if you can share',
     contact: '+71515151212',
-    confirmMessage: 'We\'ve received your inquiry.'
+    confirmMessage: 'We\'ve received your inquiry.',
+
+    confirmMessage: 'Very Strange',
+
+    klop: Math.random().toString(3).substr(2, 3),
+    //pol: klop,
+   // nht: [klop, klop, klop]
 
 };

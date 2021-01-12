@@ -62,6 +62,10 @@ class HomePage extends Page{
         return $('#modal-confirm');
     }
 
+    writeGName(){
+        console.log(Page.gName);
+    }
+
 
     open(){
         super.open('https://startmatter.com/');
