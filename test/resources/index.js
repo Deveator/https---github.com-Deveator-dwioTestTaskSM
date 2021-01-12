@@ -20,6 +20,9 @@ export default {
 
     confirmMessage: 'Very Strange',
 
+    // here is last
+    confsvsdvdsvirmMessage: 'Very Strange',
+
     klop: Math.random().toString(3).substr(2, 3),
     //pol: klop,
    // nht: [klop, klop, klop]
