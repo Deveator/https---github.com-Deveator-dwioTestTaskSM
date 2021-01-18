@@ -13,6 +13,9 @@ export default {
     country: 'Butlerland',
     contactStringPrompt: 'Contact number if you can share',
     contact: '+71515151212',
-    confirmMessage: 'We\'ve received your inquiry.'
+    confirmMessage: 'We\'ve received your inquiry.',
+
+    contact2: '+71515151212',
+    contact3: '+71515151212'
 
 };
