@@ -16,6 +16,10 @@ export default {
     confirmMessage: 'We\'ve received your inquiry.',
 
     contact2: '+71515151212',
-    contact3: '+71515151212'
+    contact3: '+71515151212',
+
+
+    contact4: '+71515151212',
+    contact5: '+71515151212'
 
 };
