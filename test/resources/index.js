@@ -18,6 +18,9 @@ export default {
     contact2: '+71515151212',
     contact3: '+71515151212',
 
+    b2Tob2: '+71515151212',
+    b2Tob2agein: '+71515151212',
+
 
     contact4: '+71515151212',
     contact5: '+71515151212'
