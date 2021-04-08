@@ -17,7 +17,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/specs/**/contactFormValidation.js'
+        './test/specs/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -90,7 +90,6 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'https://startmatter.com/',
     baseUrl: 'http://localhost',
     //
     // Default timeout for all waitFor* commands.
@@ -107,7 +106,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['chromedriver'],
+    //services: ['chromedriver'],
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -115,6 +114,8 @@ exports.config = {
     //
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
+    services: ['intercept'],
+
     framework: 'mocha',
     //
     // The number of times to retry the entire specfile when it fails as a whole
@@ -137,9 +138,10 @@ exports.config = {
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
+        // Babel setup
+        require: ['@babel/register'],
         ui: 'bdd',
-        timeout: 60000,
-        require: ['@babel/register']
+        timeout: 60000
     },
     //
     // =====
@@ -180,7 +182,8 @@ exports.config = {
      * Gets executed before test execution begins. At this point you can access to all global
      * variables like `browser`. It is the perfect place to define custom commands.
      * @param {Array.<Object>} capabilities list of capabilities details
-     * @param {Array.<String>} specs List of spec file paths that are to be run
+     * @param {Array.<String>} specs        List of spec file paths that are to be run
+     * @param {Object}         browser      instance of created browser/device session
      */
     // before: function (capabilities, specs) {
     // },
@@ -200,9 +203,8 @@ exports.config = {
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
-     beforeTest: function (tests, context) {
-         browser.maximizeWindow();
-     },
+    // beforeTest: function (test, context) {
+    // },
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
